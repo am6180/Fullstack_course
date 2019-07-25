@@ -1,0 +1,77 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf500
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 import React from 'react';\
+import ReactDOM from 'react-dom';\
+\
+const App = () => \{\
+	const course = 'Half Stack application development'\
+	\
+	const parts = [\
+	\{\
+		name: 'Fundamentals of React',\
+		exercises: 10\
+	\},\
+\
+	\{\
+		name: 'Using props to pass data',\
+		exercises: 7\
+	\},\
+\
+	\{\
+		name: 'State of a component',\
+		exercises: 14\
+	\}\
+	]\
+\
+	const [first, second, third] = parts\
+	console.log(first.name)\
+	console.log(second.name)\
+\
+	const Header = (props) => \{\
+  	return (\
+    <div>\
+      <h1>\{props.course\}</h1>\
+    </div>\
+  	)\
+	\}\
+\
+	const Content = (props) => \{\
+  	return(\
+    <div>\
+    	<p>\{first.name\} \{first.exercises\}</p>\
+    	<p>\{second.name\} \{second.exercises\}</p>\
+    	<p>\{third.name\} \{third.exercises\}</p>\
+    </div>\
+  	)\
+	\}\
+\
+	const Total = (props) => \{\
+	return(\
+	<div>\
+		<p>Number of exercises \{first.exercises + second.exercises + third.exercises\}</p>\
+	</div>	\
+	)\
+	\}\
+\
+  return (\
+    <div>\
+      <Header course=\{course\} />\
+      <Content parts=\{parts\} />\
+      <Total parts=\{parts\} />\
+    </div>\
+  )\
+  \
+\}\
+\
+\
+\
+\
+ReactDOM.render(<App />, document.getElementById('root'));\
+\
+\
+}
